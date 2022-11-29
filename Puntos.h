@@ -3,8 +3,9 @@ private:
     int puntos;
     int completo; // 1 - completo 0 - incompleto
 public:
-    Puntos();
+    
     Puntos(int pun, int com):puntos(pun), completo(com){};
+    Puntos(){};
 
     int get_puntos();
     int get_completo();
