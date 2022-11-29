@@ -29,32 +29,41 @@ std::string Producto::get_nom(){
     return nombre;}
 
 int Producto::get_pre(){
-    return precio;}
+    return precio;
+}
 
 int::Producto::get_inv(){
-    return inventario;}
+    return inventario;
+}
 
 int::Producto::get_ven(){
-    return venta;}
+    return venta;
+}
 
 void::Producto::set_nom(std::string nom){
-    nombre = nom;}
+    nombre = nom;
+}
 
 void::Producto::set_pre(int pre){
-    precio = pre;}
+    precio = pre;
+}
 
 void::Producto::set_inv(int inv){
-    inventario = inv;}
+    inventario = inv;
+}
 
 void::Producto::set_ven(int ven){
-    venta = ven;}
+    venta = ven;
+}
 
 void::Producto::compra(int cantidad){
     venta = venta + cantidad;
-    inventario = inventario - cantidad;}
+    inventario = inventario - cantidad;
+}
 
 void::Producto::restock(int cantidad){
-    inventario = inventario + cantidad;}
+    inventario = inventario + cantidad;
+}
 
 
 class Comida: public Producto{
@@ -73,10 +82,12 @@ class Comida: public Producto{
 };
 
 std::string Comida::get_tam(){
-            return tamaño;}
+    return tamaño;
+}
 
 void Comida::set_tam(std::string tam){
-    tamaño = tam;}
+    tamaño = tam;
+}
 
 class Bebida: public Producto{
     private:
@@ -88,21 +99,24 @@ class Bebida: public Producto{
         };
         Bebida(){};
         
-    std::string refill_count(int );
+    void refill_count(int );
 
     int get_refill();
 
     void set_refill(int );
 };
 
- std::string Bebida::refill_count(int refill){
+ void Bebida::refill_count(int refill){
     if (refill == 0){
         std::cout << "No tiene derecho a otro refill. Compre otra bebida.";
     }
-    refill = refill - 1;}
+    refill = refill - 1;
+}
 
 int Bebida::get_refill(){
-    return refill;}
+    return refill;
+}
 
 void Bebida::set_refill(int ref){
-    refill = ref;}
+    refill = ref;
+}

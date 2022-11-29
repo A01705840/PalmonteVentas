@@ -1,14 +1,15 @@
 # include <string>
 # include "Puntos.h"
+
 using namespace std;
 
 class Cliente{
 
 private:
     Puntos punto;
+    std::string nombre;
 
 public:
-    std::string nombre;
     
     Cliente(std::string nom): nombre(nom){};
     Cliente(){};
@@ -18,7 +19,7 @@ public:
     void set_nom(std::string );
 
     Puntos puntos_n();
-    void set_puntos_n(Puntos pun);
+    void set_puntos_n(Puntos punt);
     Puntos get_puntos_n();
 };
 
@@ -31,13 +32,17 @@ void Cliente::set_nom(std::string nom){
 
 Puntos Cliente::puntos_n(){
    Puntos p(0,0);
-   punto = p;}
+   punto = p;
+   return punto;
+}
 
-void Cliente::set_puntos_n(Puntos pun){
-    punto = pun;}
+void Cliente::set_puntos_n(Puntos punt){
+    punto = punt;
+}
 
 Puntos Cliente::get_puntos_n(){
-    return punto;}
+    return punto;
+}
 
 
 
@@ -57,14 +62,23 @@ class Nuevo: public Cliente{
 };
 
 int Nuevo::get_reg(){
-    return regalo;}
+    return regalo;
+}
 
 void Nuevo::set_reg(int reg){
-    regalo = reg;}
+    regalo = reg;
+}
 
 int Nuevo::pagar(int cantp){
     regalo = regalo - cantp;
-    return regalo;}
+    if (regalo < 0){
+        std::cout << "Saldo insuficiente";
+        return 0;
+        regalo = regalo + cantp;
+    }else if (regalo > 0){
+        return regalo;
+    }
+}
 
 
 class Registrado: public Cliente{
@@ -86,11 +100,20 @@ public:
 
 
 void Registrado::set_sal(int sal){
-    saldo = sal;}
+    saldo = sal;
+}
 
 int Registrado::pagar(int cantp){
     saldo = saldo - cantp;
-    return saldo;}
+    if (saldo < 0){
+        std::cout << "Saldo insuficiente";
+        return 0;
+        saldo = saldo + cantp;
+    }else if (saldo > 0){
+        return saldo;
+    }
+}
 
 int Registrado::get_sal(){
-    return saldo;}
+    return saldo;
+}

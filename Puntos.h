@@ -1,11 +1,13 @@
+#ifndef Puntos_h
+#define Puntos_h
+#include <iostream>
+
 class Puntos{
 private: 
-    int puntos;
-    int completo; // 1 - completo 0 - incompleto
-public:
-    
-    Puntos(int pun, int com):puntos(pun), completo(com){};
-    Puntos(){};
+    int puntos, completo; // 1 - completo 0 - incompleto
+public:   
+    Puntos():puntos(0), completo(0){};
+    Puntos(int pun, int com): puntos(pun), completo(com){};
 
     int get_puntos();
     int get_completo();
@@ -15,11 +17,13 @@ public:
 
     void compra(int );
     void premio();
+
 };
 
 int Puntos::get_puntos(){
     return puntos;
 }
+    
 int Puntos::get_completo(){
     return completo;
 }
@@ -27,11 +31,11 @@ int Puntos::get_completo(){
 void Puntos::set_puntos(int pun){
     puntos = pun;
 }
+
 void Puntos::set_completo(int com){
     if (com > 1 or com < 0){
         completo = 0;
-    }
-    if (com < 1 or com > 0){
+    }if (com < 1 or com > 0){
         completo = com;
     }
 }
@@ -42,7 +46,8 @@ void Puntos::compra(int puncom){
 
 void Puntos::premio(){
     if(puntos == 10){
-        completo =  1;
+        completo = 1;
         puntos = 0;
     }
 }
+#endif

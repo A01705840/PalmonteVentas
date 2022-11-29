@@ -18,7 +18,6 @@ Registrado benjamin("Benjamin", 135);
 std::string nom;
 std::string list_productos[20];
 std::string op_prod;
-
 int ing;
 int tot_precio;
 int list_precios[20];
@@ -35,10 +34,11 @@ void nuevo_c(){
         Nuevo n_1(nom,100);
         std::cout << endl;
         std::cout << "Saldo: "<< n_1.get_reg();
-        std::cout << "Bienvenido "<< nom << " " << "te hemos regalado 100 pesos por tu ingreso";}
+        std::cout << "Bienvenido "<< nom << " " << "te hemos regalado 100 pesos por tu ingreso";
+
+}
 
 void registro_c(std::string nom){
-
     if (nom == helena.get_nom()){
         std::cout << "Saldo: " << helena.get_sal() << "\n";
     }else if (nom == samir.get_nom()){
@@ -81,7 +81,7 @@ void add_cant(std::string list_productos [20], int list_precios [20], int tam_li
         cant = 0;
     }
 }
-int mult_pre(int list_precios [20], std::string list_productos [20], int tam_list, int tot_precio, int cantidad){  
+void mult_pre_pagar(int list_precios [20], std::string list_productos [20], int tam_list, int tot_precio, int cantidad, std::string nom){  
     cantidad = 0;
     tot_precio = 0;
     for (int x = 0; x<tam_list; x++){
@@ -109,11 +109,29 @@ int mult_pre(int list_precios [20], std::string list_productos [20], int tam_lis
         }else{
             tot_precio = tot_precio;
         }
-    }
     std::cout << "Total: $" << tot_precio << "\n";
+
+    if (nom == helena.get_nom()){
+        helena.pagar(tot_precio);
+        std::cout << "Saldo restante: ";
+        std::cout << helena.get_sal();
+    }if (nom == samir.get_nom()){
+        samir.pagar(tot_precio);
+        std::cout << "Saldo restante: " << samir.get_sal();
+    }if (nom == dayra.get_nom()){
+        dayra.pagar(tot_precio);
+        std::cout << "Saldo restante: " << dayra.get_sal();
+    }if (nom == benjamin.get_nom()){
+        benjamin.pagar(tot_precio);
+        std::cout << "Saldo restante: " << benjamin.get_sal();
+    }else{cout << " ";}
+    }
 }
+
 int bienvenida;
 int main(){
+    int tot;
+    std::string nom;
     std::cout << "Nuevo Cliente (1) / Ingresar (2): \n ⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉⑉ \n";
     std::cin >> bienvenida;
     if (bienvenida == 1){
@@ -121,10 +139,10 @@ int main(){
     }
     else if(bienvenida == 2){
         
-        std::string nom;
-        std::cout<<"Ingresa el nombre de usuario: ";
+        std::cout << "Ingresa el nombre de usuario: ";
         std::cin >>nom;
         registro_c(nom);
+        
     }
 
     productos_menu();
@@ -143,7 +161,5 @@ int main(){
     print(list_productos, tam_list);
     int cantidad;
     add_cant(list_productos, list_precios,tam_list);
-    mult_pre(list_precios, list_productos, tam_list, tot_precio,cantidad);
-
-    return 0;
+    mult_pre_pagar(list_precios, list_productos, tam_list, tot_precio,cantidad,nom);
 }
