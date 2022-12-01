@@ -21,6 +21,7 @@ public:
     Puntos puntos_n();
     void set_puntos_n(Puntos punt);
     Puntos get_puntos_n();
+
 };
 
 std::string Cliente::get_nom(){

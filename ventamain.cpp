@@ -33,7 +33,7 @@ void nuevo_c(){
         std::cin >> nom;
         Nuevo n_1(nom,100);
         std::cout << endl;
-        std::cout << "Saldo: "<< n_1.get_reg();
+        std::cout << "Saldo: "<< n_1.get_reg() << endl;
         std::cout << "Bienvenido "<< nom << " " << "te hemos regalado 100 pesos por tu ingreso";
 
 }
@@ -128,6 +128,15 @@ void mult_pre_pagar(int list_precios [20], std::string list_productos [20], int 
     }
 }
 
+void tarjeta_puntos(){
+    int op;
+    std::cout << "Te gustaría adquirir nuestra nueva tarjeta de puntos? \n Si (1) No (2)";
+    std::cin >> op;
+    if (op == 1){
+
+    }
+}
+
 int bienvenida;
 int main(){
     int tot;
@@ -162,4 +171,5 @@ int main(){
     int cantidad;
     add_cant(list_productos, list_precios,tam_list);
     mult_pre_pagar(list_precios, list_productos, tam_list, tot_precio,cantidad,nom);
+    
 }
