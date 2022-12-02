@@ -33,15 +33,24 @@ Las clases y sus objetos ayudan a mantener organizado y efectivo el uso de las f
 Para este proyecto se realizaron las siguientes correcciones:
 
 Diseño clases sencillas completas (presente en Cliente.h, Puntos.h y Producto.h, y en el UML
+
 Codifico métodos y atributos de clase correctamente. (presente uso de getters en ventamain.cpp (69-72) o (128 - 143))
+
 Utilizo el concepto de composición (o agreagación) en el diagrama de clases. (presente en Cliente.h líneas 72 y 110; en Producto.h
 líneas 99 y 127)
+
 Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML. "Se comentó que faltaban clases en el UML, ahora todas son incluidas y el programa esta basado en el UML.
+
 Codifico métodos y atributos de clase correctamente. (constructores, getters, setters) (presente en Cliente.h, Puntos.h y Producto.h, cada clase e clase hija tienen un constrcutor default y otro con valores para llenar,  Ej. Cliente.h (118 a 122))
+
 Implemento herencia de manera correcta y util ( presente en Cliente.h, se presenta la diferencia de ingreso entre clases hijas Nuevo y Registrado, variando las variables int regalo (Nuevo) e int saldo (Registrado), se muestra en Cliente.h (Línea 75 y 114)
+
 Impemento composición (o agregación) sieguiendo mi diagrama de clases( Composición de la clase Puntos.h a Cliente.h para crear una tarjeta de puntos, Líneas (40 a 67).
+
 Implemento clases apegadas a requerimientos a partir de un modelo. (presente en Cliente.h, Puntos.h y Producto.h)
+
 Sigo estándares en todo mi código fuente: estilo, sangrías, comentarios, nombres, etc... (en comentarios ventamain.cpp (1 a 6), orden métodos Producto.h (32 a 42), sangrías Puntos.h (18 a 35).
+
 Guardo correctamente los avances en commits durante la materia. "Se guardaron los archivos sin dejar archivos de versiones pasadas o extra; se implementó guía para Entrar como usuario nuevo o registrado, README.md (Explicación código)
 
 
