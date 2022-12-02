@@ -29,7 +29,8 @@ Si el usuario decide tomarla, se le indicara sus puntos, y si no, el programa so
 Esta dinámica de compra de productos por medio de una app o programa es un sistema muy eficiente en restaurantes de alta demanada, como en la comida rápida.
 Las clases y sus objetos ayudan a mantener organizado y efectivo el uso de las funcionalidades del programa, brindando coherencia y eficiencia a los negocios.
 
-##CORRECIÓNES
+## CORRECIÓNES
+
 Para este proyecto se realizaron las siguientes correcciones:
 
 Diseño clases sencillas completas (presente en Cliente.h, Puntos.h y Producto.h, y en el UML
